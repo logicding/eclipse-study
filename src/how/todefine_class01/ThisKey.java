@@ -3,7 +3,10 @@ package how.todefine_class01;
 
 /*
  1.this表示对象的本身
- 2.
+ 2.调用同一个类中的其他成员变量
+ 3.调用同一个类中的其他成员方法
+ 4.区分同名成员变量和形参
+ 5.调用另外一个构造方法
 */
 public class ThisKey {
 
