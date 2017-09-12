@@ -7,6 +7,7 @@ public class Circle {
 		return 2*PI*r;
 	}
 	public double getMianji(){
+		System.out.println("run here...");
 		return PI*r*r;
 	}
 }
