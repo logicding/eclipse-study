@@ -35,11 +35,17 @@ public class Test {
 		p1.work();
 		p1.showMsg();
 		Circle ci =  new Circle(){
+			//匿名内部类中要么实现接口，要么覆盖抽象方法，否则这里实现的方法无法使用
 			public double getMianji(){
 				System.out.println("为什么不行");
 				return 2*3.14f*r;
 			}
 		};
+	/*	new Picture(){//这种方式同样需要实现或者覆盖
+			public void show(){
+				System.out.println("另外一个匿名内部类");
+			}
+		}.show();*/
 		/*
 		 * 第一：如果两个代码都在同一个包中的话，
 		 *  是不用使用import语句来调用的。 可以直接使用另一个主类，
