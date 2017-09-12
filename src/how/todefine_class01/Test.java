@@ -34,7 +34,12 @@ public class Test {
 		p1.eat();
 		p1.work();
 		p1.showMsg();
-		Circle ci = new Circle();
+		Circle ci =  new Circle(){
+			public double getMianji(){
+				System.out.println("为什么不行");
+				return 2*3.14f*r;
+			}
+		};
 		/*
 		 * 第一：如果两个代码都在同一个包中的话，
 		 *  是不用使用import语句来调用的。 可以直接使用另一个主类，
@@ -46,6 +51,7 @@ public class Test {
 		ci.r = 100;
 		System.out.println(ci.getMianji());
 		System.out.println(ci.getZhouchang());
+
 	}
 }
 
@@ -70,6 +76,3 @@ class Person{
 	//构造方法
 }
 
-class Myclass{
-	
-}
