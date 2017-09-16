@@ -1,4 +1,4 @@
-package how.todefine_class01;
+package how.todefine_class01;//相对与工作目录的一个路径，比如现在的工作目录是src目录，这个时候本源文件的目录就是包名
 
 import java.io.File;
 import java.sql.Date;
