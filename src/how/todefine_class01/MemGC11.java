@@ -10,6 +10,7 @@ public class MemGC11 {
  * 3.实例变量
  * 4.静态变量
  * 
+ * GC发现没有任何的引用在使用堆内存的时候，GC会主动回收堆内存中分配的空间
  * */
 		/*int a = 1;
 		int b =a;
@@ -35,14 +36,14 @@ public class MemGC11 {
 		d.setDay(16);
 		d.showData();
 		
-		Data d2 = d;
-		change(d2);
+		Data d2 = d;//引用传递
+		change(d2);//修改的是d中的值
 		d.showData();
 		d2.DID = 1024;
 		d.showData();
 		
 		
-	}
+	}//main函数执行完毕的时候new出来的类所占用的空间被GC回收
 	static void change(Data d){
 		d.setYear(2018);
 	}
