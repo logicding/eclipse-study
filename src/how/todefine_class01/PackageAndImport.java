@@ -22,7 +22,7 @@ public class PackageAndImport {
 //		array.use.way.Array b = new array.use.way.Array();
 		Array a = new Array();
 		File f = new File("./uu.txt");
-		Date d = new Date();
+//		Date d = new Date();
 	}
 
 }
