@@ -2,6 +2,9 @@ package extend.study;
 
 public class ExtendStructWay {
 //继承中的构造方法
+	/*1.子类默认自动调用父类的无参构造方法
+	 * 2.如果父类中没有默认的构造方法，那么子类中必须要手动调用父类中的构造方法
+	 * */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DogOne dog = new DogOne();
@@ -50,7 +53,7 @@ class Animal{
 }
 class DogOne extends Animal{
 	public DogOne(){
-		super("京巴", 2);
+		super("京巴", 2);//没有默认构造函数后，必须要显示调用父类的构造方法
 //		super();//默认的，写不写都会有，调用父类的构造方法
 		System.out.println("Dog run");
 	}
