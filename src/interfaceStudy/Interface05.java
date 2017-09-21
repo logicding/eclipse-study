@@ -11,7 +11,7 @@ public class Interface05 {
  * 
  * */
 		Outer out =  new Outer();
-		Outer.Inner in =  out.new Inner()£»
+		Outer.Inner in =  out.new Inner();
 		//Outer.Inner in = out.getInner();
 		in.x2();
 		out.m2();
