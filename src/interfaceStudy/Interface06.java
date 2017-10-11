@@ -1,5 +1,5 @@
 package interfaceStudy;
-
+package extend.study;
 public class Interface06 {
 //¾²Ì¬staticÄÚ²¿Àà
 	public static void main(String[] args) {
@@ -16,6 +16,7 @@ public class Interface06 {
 
 
 class MaxMin{
+	
 	static class Pair{
 		static int min, max;
 		static Pair getMinMax(int[] a){
