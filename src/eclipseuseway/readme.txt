@@ -15,3 +15,20 @@ java文件可以使用refactor 重构中该源文件名字
 
 
 鼠标点击项目名称单击右键进入preference -> java_build_path可以查看连接的jar包路径和源码路径
+
+
+第三节
+
+java 开发项目管理
+
+把项目创建在桌面的时候千万不要使用删除项目并删除源码，容易把桌面上的东西删除
+
+设置classpath 单击右键 build path选项可以导入新的路径（库 jar包）
+
+project -> clean 删除已经有的class文件（java编译后的文件）
+
+双击行号前面就可以添加断点便于调试
+
+选中java源码 单击右键选择debug as进入调试界面，进行断点运行
+
+
