@@ -32,3 +32,28 @@ project -> clean 删除已经有的class文件（java编译后的文件）
 选中java源码 单击右键选择debug as进入调试界面，进行断点运行
 
 
+
+第四节 java开发文件管理
+文件删除，代码源文件的复制，可以重新命名类名称
+
+
+第五节 java编辑器
+
+
+1. alt + / 代码跟踪
+ System.out.println   sysout 可以追踪到
+
+2.ctrl + / 行注释  块注释 ctrl + shitf + /
+
+3. ctrl + shitf + o import 导包
+
+4.ctrl + d 删除选中内容
+
+ ctrl + c v x
+ 
+5. ctrl + shift + f 自动对齐
+
+
+
+
+

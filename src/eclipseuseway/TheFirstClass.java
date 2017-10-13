@@ -12,6 +12,8 @@ public class TheFirstClass {
 		int b = 20;
 		System.out.println( b);
 		System.out.println(a + b);
+		
+		System.out.println();
 	}
 
 }
