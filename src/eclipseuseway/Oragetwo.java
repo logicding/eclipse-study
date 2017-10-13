@@ -14,6 +14,8 @@ abstract class Demo001{
 	abstract void getPart();
 }
 
+
+
 class Demo01 extends Demo001{
 	int b ;
 	/* (non-Javadoc)
@@ -25,6 +27,14 @@ class Demo01 extends Demo001{
 		int result = 1;
 		result = prime * result + b;
 		return result;
+	}
+	/* (non-Javadoc)
+	 * @see eclipseuseway.Demo001#getPart()
+	 */
+	@Override
+	void getPart() {
+		// TODO Auto-generated method stub
+		
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
