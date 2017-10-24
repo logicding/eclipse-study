@@ -39,10 +39,10 @@ public class SetWay03 {
 		Person p2 = new Person(2, "tom1");
 		Person p3 = new Person(3, "tom2");
 		Person p4 = new Person(3, "tom2");
-		p.add(p1);
-		p.add(p2);
-		p.add(p3);
-		p.add(p4);
+//		p.add(p1);//hashcode 和 equels是 HashSet 会调用的，如果hashcode相同，则再去调用equels去判断是否相同
+//		p.add(p2);
+//		p.add(p3);
+//		p.add(p4);
 	/*	for(Person e: p){
 			System.out.println(e);
 		}*/
@@ -56,9 +56,10 @@ public class SetWay03 {
 		}*/
 		
 		TreeSet<Person> ps = new TreeSet<Person>();
-		ps.add(p1);
+		ps.add(p1);//TreeSet只会调用comparaTo去判断是否相同
 		ps.add(p2);
 		ps.add(p3);
+		ps.add(p4);
 		for(Person e: ps){
 			System.out.println(e);
 		}
@@ -111,6 +112,7 @@ class Person implements Comparable<Person>{//需要继承Comparable
 	 */
 	@Override
 	public int hashCode() {
+		System.out.println("hashcode");
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
@@ -122,6 +124,7 @@ class Person implements Comparable<Person>{//需要继承Comparable
 	 */
 	@Override//使用工具产生hash和equals
 	public boolean equals(Object obj) {
+		System.out.println("equesls");
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -141,6 +144,7 @@ class Person implements Comparable<Person>{//需要继承Comparable
 	
 	//@Override 
 	public int compareTo(Person o) {
+		System.out.println("compareTo");
 		// TODO Auto-generated method stub
 		if(pid > o.pid){
 			return -1;
