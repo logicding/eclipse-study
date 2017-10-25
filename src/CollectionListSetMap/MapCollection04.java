@@ -2,12 +2,13 @@ package CollectionListSetMap;
 
 import java.util.HashMap;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class MapCollection04 {
 /*Map: key:value 键值对，key是唯一的，value是可以重复的，通过key可以获得value值
  * 
  * HashMap TreeMap
- * 
+ *  数据结构 hashtable  tree
  * */
 	public static void main(String[] args) {
 		// TODSTRING-generated method stub
@@ -33,21 +34,38 @@ public class MapCollection04 {
 		
 		MyInt i1 = new MyInt(1);
 		MyInt i2 = new MyInt(2);
-		MyInt i3 = new MyInt(2);
+		MyInt i3 = new MyInt(3);
 		
 		HashMap<MyInt, String> hm = new HashMap<MyInt, String>();
 		
 		hm.put(i1, "onw");
 		hm.put(i2, "onw2");
 		hm.put(i3, "onw4");
-		for(MyInt i: hm.keySet()){
-			System.out.println(i + hm.get(i));
+//		for(MyInt i: hm.keySet()){
+//			System.out.println(i + hm.get(i));
+//		}
+		
+//		TreeMap<String, String> tm = new TreeMap<String,String>();
+//		tm.put("1", "one");
+//		tm.put("2", "one2");
+//		tm.put("3", "one3");
+//		tm.put("4", "one4");
+//		for(String e : tm.keySet()){
+//			System.out.println(e + ":" + tm.get(e));
+//		}
+		
+		TreeMap<MyInt,String> tm = new TreeMap<MyInt,String>();
+		tm.put(i1, "onw");
+		tm.put(i2, "onw2");//TreeMap里面的key也要保证唯一性，通过继承Comparable<>并实现其中的方法
+		tm.put(i3, "onw4");
+		for(MyInt e : tm.keySet()){
+			System.out.println(e + ":" + tm.get(e));
 		}
 	}
 
 }
 
-class MyInt{
+class MyInt implements Comparable<MyInt>{
 	private int i;
 	
 	
@@ -83,5 +101,15 @@ class MyInt{
 	public MyInt(int i) {
 		this.i = i;
 	};
-	
+	@Override
+	public int compareTo(MyInt o) {
+		// TODO Auto-generated method stub
+		if(o.i > this.i){
+			return -1;
+		}else if(o.i < this.i){
+			return 1;
+		} else {
+			return 0;
+		}
+	}
 }
