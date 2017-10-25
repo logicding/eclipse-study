@@ -39,7 +39,9 @@ public class CollectionOftenWay05 {
 		for(PersonTwo e : list){
 			System.out.println(e);
 		}
-		
+		synchronized (p1) {
+			
+		}
 		//max最大值查询，这个与compara接口实现有关，如果是升序那么就是最大的，反之就是最小的
 		PersonTwo maxPer = Collections.max(list);
 		System.out.println(maxPer.getAge());
