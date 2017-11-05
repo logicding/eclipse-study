@@ -116,6 +116,7 @@ private static void outChinese() {
 
 private static void copy() {
 	// TODO Auto-generated method stub
+	//文件字节流
 	FileOutputStream out = null;
 	FileInputStream in = null;
 	try {
