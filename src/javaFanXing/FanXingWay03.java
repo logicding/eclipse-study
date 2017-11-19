@@ -5,11 +5,9 @@ public class FanXingWay03 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String[] a = {"tom", "kite", "rose"};
-		System.out.println();
-		
 		System.out.println(MyClass.middle(a));
-		Pen[] pa = {new Pen("tom", 1), new Pen("lite", 2),};
-		System.out.println(Myclass./*<Person>泛型参数类型可以加也可以不加*/middle());
+		Pen[] pa = {new Pen("tom", 1), new Pen("lite", 2),new Pen("kk",3)};
+		System.out.println(MyClass./*<Person>泛型参数类型可以加也可以不加*/middle(pa));
 	}
 
 }
@@ -37,7 +35,7 @@ class Pen{
 }
 
 
-class Myclass{
+class MyClass{
 	
 	public static <T> T middle(T[] a){
 		return a[a.length/2];
