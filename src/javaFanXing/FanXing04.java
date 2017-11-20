@@ -1,5 +1,6 @@
 package javaFanXing;
 
+import java.io.Serializable;
 
 public class FanXing04 {
 //泛型变量的类型的限定
@@ -20,7 +21,7 @@ public class FanXing04 {
 
 }
 
-class MySun implements Comparable<MySun>{
+class MySun implements Comparable<MySun>,Serializable {
 	@Override
 	public String toString() {
 		return this.count + " : " + this.name;
@@ -56,7 +57,8 @@ class MySun implements Comparable<MySun>{
 	
 }
 
-class Myobj<T extends Comparable>{//extends用来限定泛型T类必须实现comparable
+class Myobj<T extends Comparable & Serializable>{//extends用来限定泛型T类必须实现comparable
+	//多个限定的写法，加上&字符
 	public T max(T[] a){
 		T max = a[0];
 		for(T x: a){
