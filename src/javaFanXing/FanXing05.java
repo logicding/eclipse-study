@@ -8,6 +8,7 @@ public class FanXing05 {
 		PairOne po = new PairOne("tom");
 		String str = (String)po.getObj();
 		System.out.println(str);
+		po.showObj();
 	}
 
 }
@@ -36,7 +37,7 @@ class PairOne{
 		super();
 		this.obj = obj;
 	}
-	public showObj(){
+	public void showObj(){
 		System.out.println(this.obj + ":" + this.obj.getClass().getName());
 	}
 }
