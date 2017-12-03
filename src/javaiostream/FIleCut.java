@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FIleIO02And03 {
+public class FIleCut {
 /*
  * 内存  ---> 磁盘     write 输出
  * 
@@ -23,11 +23,23 @@ public class FIleIO02And03 {
 	
 	public static void main(String[] args) {
 
-		cutBigFile(args[0], args[1]);
+		if(args.length < 1){
+			
+			System.out.println("You can use the cut tool by the way:\n1.cut.bat <origin file> <cutedfile name>\n");
+			
+		}
+		if(args.length == 1){
+			if(args[0] != null){
+				System.out.println("jjjjjjjjjjjjjjj");
+				cutBigFile(args[0]); 
+			}
+		}
+		
+		System.out.println("jjjjjjjjjjjjjjj");
 
 	}
 
-private static void cutBigFile(String string, String string2) {
+private static void cutBigFile(String string) {
 	// TODO Auto-generated method stub
 	// TODO Auto-generated method stub
 	//文件字节流
@@ -38,7 +50,10 @@ private static void cutBigFile(String string, String string2) {
 			long size = 0;
 			int count = 0;
 			in = new FileInputStream(string);// 把文件切小
-			out = new FileOutputStream(string2);
+			String newfilepath = string + "cutedfile";
+			File dir = new File(newfilepath);
+			dir.mkdir();
+			out = new FileOutputStream(newfilepath + File.separator + "cutedfile");
 			byte[] buffer = new byte[1024*1024];
 			while (true) {
 				//System.out.println("0000000");
@@ -54,7 +69,7 @@ private static void cutBigFile(String string, String string2) {
 						
 						out.close();
 						System.out.println("read out size is  " + sumsize);
-						out = new FileOutputStream(string2 + count);
+						out = new FileOutputStream(newfilepath +File.separator + "cutedfile"+ count);
 						count++;
 						sumsize = 0;
 					}
