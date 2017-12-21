@@ -25,18 +25,18 @@ public class FIleCut {
 
 		if(args.length < 1){
 			
-			System.out.println("You can use the cut tool by the way:\n1.cut.bat <origin file> <cutedfile name>\n");
-			
+			System.out.print("You can use the cut tool by the way:\n cut <origin file> \nThen the cuted files will show in dir named by input file name !");
+			return;
 		}
 		if(args.length == 1){
 			if(args[0] != null){
-				System.out.println("jjjjjjjjjjjjjjj");
+	
 				cutBigFile(args[0]); 
 			}
+		}else{
+			System.out.print("You inputed too much args!!!");
 		}
 		
-		System.out.println("jjjjjjjjjjjjjjj");
-
 	}
 
 private static void cutBigFile(String string) {
@@ -68,13 +68,15 @@ private static void cutBigFile(String string) {
 					if(sumsize == 1024*1024*100){
 						
 						out.close();
+						out = null;//这里需要置空下，否则如果在new FileOutputStream报错的时候，走到finally又会操作一次close
 						System.out.println("read out size is  " + sumsize);
 						out = new FileOutputStream(newfilepath +File.separator + "cutedfile"+ count);
 						count++;
 						sumsize = 0;
 					}
 				}else {
-					out.close();
+					//out.close();
+					//out = null; 这里不做关闭操作了，交给finally处理
 					break;
 				}
 			}
@@ -85,6 +87,8 @@ private static void cutBigFile(String string) {
 			try {
 				if (in != null)
 					in.close();
+				if(out != null)
+					out.close();
 
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
