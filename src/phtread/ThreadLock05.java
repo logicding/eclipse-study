@@ -30,7 +30,8 @@ class Tom{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		k.eat();
+		System.out.println("---tom lend " + Thread.currentThread().getName());
+		k.eatFood();
 	}
 
 	synchronized public void eat() {
@@ -39,16 +40,19 @@ class Tom{
 }
 class Kite{
 	synchronized public void lend(Tom t){
-		System.out.println("如果kite把筷子借给tom，那么kite就可以吃饭啦...");
+		System.out.println("如果kite把筷子借给tom，那么tom就可以吃饭啦...");
+	
 		try {
 			Thread.sleep(1000);
-		} catch (InterruptedException e) {
+		}
+	 catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("kite lend  " + Thread.currentThread().getName());
 		t.eat();
 	}
-	synchronized public void eat(){
+	synchronized public void eatFood(){
 		System.out.println("kite 可以吃饭了");
 	}
 }
@@ -58,6 +62,7 @@ class MyThreadLock extends Thread{
 	Tom t = new Tom();
 	Kite k = new Kite();
 	public MyThreadLock(){
+		System.out.println(Thread.currentThread().getName());
 		this.start();
 		k.lend(t);//通过对象访问的synchronized方法的时候，获取的是对象锁
 	}
