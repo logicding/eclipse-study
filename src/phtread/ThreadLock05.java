@@ -59,7 +59,7 @@ class MyThreadLock extends Thread{
 	Kite k = new Kite();
 	public MyThreadLock(){
 		this.start();
-		k.lend(t);
+		k.lend(t);//通过对象访问的synchronized方法的时候，获取的是对象锁
 	}
 	@Override
 	public void run() {
