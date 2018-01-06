@@ -85,6 +85,13 @@ public class ListWay02 {
 		a1.clear();
 		
 		loop(a1);*/
+		Ponit p = new Ponit(1, 2);
+		ArrayList<Ponit> ponit = new ArrayList<Ponit>();
+		ponit.add(p);
+		System.out.println("+++++++++++++++"+ponit.contains(new Ponit(1,2)));
+		p.Testway();
+		Chess c = new Chess(1,2);
+		c.Testway();
 	}
 	
 	static void loop(List<String> list){
@@ -94,3 +101,24 @@ public class ListWay02 {
 	}
 
 }
+class Chess extends Ponit {
+
+	public Chess(int x, int y) {
+		super(x, y);
+		// TODO Auto-generated constructor stub
+	}
+	
+}
+
+class Ponit{
+	int x;
+	int y;
+	public Ponit(int x, int y) {
+		super();
+		this.x = x;
+		this.y = y;
+	}
+	protected void Testway(){
+		System.out.println("000000000");
+	}
+} 
