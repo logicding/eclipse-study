@@ -4,14 +4,16 @@ public class TestCreateThread02 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		//1.启动一个线程调用start方法，而不是run方法，如果调用run方法就是一个单线程
+		//2.停止一个线程通过设置一个flag ，run方法返回线程正常结束
+		  // terrrunpt
 		Thread t = new Thread(new MyThread());
 //		t.run();//这个只是单线程了
 		t.start();
-		
-		while(true){
-			System.out.println("--------------");
-		}
+//		t.stop();被废弃了
+//		while(true){
+//			System.out.println("--------------");
+//		}
 //		new Thread(new Runnable() {
 //			
 //			@Override
@@ -61,6 +63,10 @@ class MyThread implements Runnable{
 		boolean flag = true;
 		int i = 0;
 		while (flag) {
+			if(i > 5){
+//				Thread.currentThread().interrupt();//会导致sleep抛出异常
+				flag = false;//停止线程的正确方法
+			}
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {

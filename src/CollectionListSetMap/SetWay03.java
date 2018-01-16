@@ -17,7 +17,6 @@ public class SetWay03 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		HashSet<String> hs = new HashSet<String>();
-		
 		hs.add("one");
 		hs.add("uuuu");
 		hs.add("two");
