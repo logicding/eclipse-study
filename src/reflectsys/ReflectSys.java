@@ -10,12 +10,12 @@ public class ReflectSys {
 		getClass3();
 		
 	}
-	//推荐使用该方法来获取自描述，主要原因是该方法可以通过配置文件来修改代码逻辑的效果
+	//class里面有一个静态方法Class.forName推荐使用该方法来获取自描述，主要原因是该方法可以通过配置文件来修改代码逻辑的效果
 	private static void getClass3() {
 	// TODO Auto-generated method stub
 		Class cls = null;
 		try {
-			cls = Class.forName("reflectsys.Persons");
+			cls = Class.forName("reflectsys.Persons");//从某个包中找到类？？
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
